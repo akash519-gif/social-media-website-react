@@ -95,15 +95,7 @@ export default function RightBar() {
                 src="https://media.gettyimages.com/id/171271182/photo/delhi-university-building-and-corridor.jpg?s=612x612&w=0&k=20&c=3vcPST9RRxk71Xbbli8S7v4ytRRZ0yBiVh5eRPItHS0="
                 alt=""
               />
-              <span>Akash</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userinfo">
-              <img
-                src="https://media.gettyimages.com/id/171271182/photo/delhi-university-building-and-corridor.jpg?s=612x612&w=0&k=20&c=3vcPST9RRxk71Xbbli8S7v4ytRRZ0yBiVh5eRPItHS0="
-                alt=""
-              />
+              <div className="online" />
               <span>Akash</span>
             </div>
           </div>
@@ -117,6 +109,17 @@ export default function RightBar() {
               <span>Akash</span>
             </div>
           </div>
+          <div className="user">
+            <div className="userinfo">
+              <img
+                src="https://media.gettyimages.com/id/171271182/photo/delhi-university-building-and-corridor.jpg?s=612x612&w=0&k=20&c=3vcPST9RRxk71Xbbli8S7v4ytRRZ0yBiVh5eRPItHS0="
+                alt=""
+              />
+              <div className="online" />
+              <span>Akash</span>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
