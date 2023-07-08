@@ -13,61 +13,61 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-const currentUser = false;
-
-const Layout = () =>{
-  return(
-    <div>
-      <NavBar/>
-      <div>
-        <LeftBar/>
-        <Outlet/>
-        <RightBar/>
-      </div>
-    </div>
-  )
-}
-
-const ProtectedRoute = ({children}) =>{
-  if(!currentUser){
-    return Navigate("/login")
-  }
-  return children
-}
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (<ProtectedRoute>
-                <Layout/>
-              </ProtectedRoute>),
-    children:[
-      {
-        path: "/",
-        element: <Home/>
-      },
-      {
-        path: "/profile/:id",
-        element: <Profile/>
-      }
-    ]
-  },
-  {
-    path: "/login",
-    element: <Login/>,
-  },
-  {
-    path: "/register",
-    element: <Register/>,
-  }
-]);
 
 function App() {
+    const currentUser = true;
+
+    const Layout = () =>{
+      return(
+        <div>
+          <NavBar/>
+          <div>
+            <LeftBar/>
+            <Outlet/>
+            <RightBar/>
+          </div>
+        </div>
+      )
+    }
+
+    const ProtectedRoute = ({children}) =>{
+      if(!currentUser){
+        return <Navigate to='/login'/>
+      }
+      return children
+    }
+
+    const router = createBrowserRouter([
+      {
+        path: "/",
+        element: (<ProtectedRoute>
+                    <Layout/>
+                  </ProtectedRoute>),
+        children:[
+          {
+            path: "/",
+            element: <Home/>
+          },
+          {
+            path: "/profile/:id",
+            element: <Profile/>
+          }
+        ]
+      },
+      {
+        path: "/login",
+        element: <Login/>,
+      },
+      {
+        path: "/register",
+        element: <Register/>,
+      }
+    ])
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={router} />
     </div>
-  );
+  )
 }
 
 export default App;

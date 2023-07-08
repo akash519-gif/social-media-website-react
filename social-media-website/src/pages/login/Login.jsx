@@ -1,5 +1,4 @@
 import "./login.scss"
-import Register from "../register/Register"
 import { Link } from "react-router-dom"
 
 const Login = () => {
