@@ -1,4 +1,4 @@
-import "./NavBar.scss";
+import "./navBar.scss";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
@@ -11,10 +11,13 @@ import { Link } from "react-router-dom";
 
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
 
 export default function NavBar() {
 
   const {toggle, darkMode} = useContext(DarkModeContext);
+  const {currentUser} = useContext(AuthContext);
+
 
   return (
     <div className="navbar">
@@ -35,8 +38,8 @@ export default function NavBar() {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-          <img src='https://media.gettyimages.com/id/171271182/photo/delhi-university-building-and-corridor.jpg?s=612x612&w=0&k=20&c=3vcPST9RRxk71Xbbli8S7v4ytRRZ0yBiVh5eRPItHS0=' alt=''/>
-          <span>Akash</span>
+          <img src={currentUser.profilePic} alt=''/>
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

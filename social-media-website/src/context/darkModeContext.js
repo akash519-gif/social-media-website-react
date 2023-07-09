@@ -4,7 +4,8 @@ export const DarkModeContext = createContext()
 
 export const DarkModeContextProvider = ({children}) =>{
     const [darkMode, setDarkMode] = useState(
-        JSON.parse(localStorage.getItem("darkMode")) || false
+        JSON.parse(localStorage.getItem("darkMode")) || false //json.parse modifies string returnd to original datatype...which here
+                                                        // is boolean.
     );
 
     const toggle = () =>{

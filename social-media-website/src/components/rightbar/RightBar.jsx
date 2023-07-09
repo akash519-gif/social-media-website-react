@@ -1,4 +1,4 @@
-import "./RightBar.scss";
+import "./rightBar.scss";
 
 import React from "react";
 
